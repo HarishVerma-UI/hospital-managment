@@ -8,7 +8,7 @@ import { HospitalsService } from '../hospitals.service';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-hero-list',
+  selector: 'app-hospital-list',
   templateUrl: './hospital-list.component.html',
   styleUrls: ['./hospital-list.component.css']
 })

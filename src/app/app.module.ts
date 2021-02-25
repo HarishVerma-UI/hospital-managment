@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HospitalsModule } from './heroes/hospitals.module';
+import { HospitalsModule } from './root/hospitals.module';
 
 @NgModule({
   imports: [

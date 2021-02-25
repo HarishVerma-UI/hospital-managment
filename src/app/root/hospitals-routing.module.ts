@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HospitalListComponent } from './hospitals/hospital-list.component';
 import { DepartmentListComponent } from './departmants/department-list.component';
 
-const heroesRoutes: Routes = [
+const hospitalRoutes: Routes = [
   { path: 'hospitals', redirectTo: '/hospitals' },
   { path: 'hospitals',  component: HospitalListComponent },
   { path: 'department/:id', component: DepartmentListComponent}
@@ -12,7 +12,7 @@ const heroesRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(heroesRoutes)
+    RouterModule.forChild(hospitalRoutes)
   ],
   exports: [
     RouterModule

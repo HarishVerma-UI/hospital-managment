@@ -5,7 +5,7 @@ import { HospitalsService } from '../hospitals.service';
 
 
 @Component({
-  selector: 'app-hero-detail',
+  selector: 'app-department-list',
   templateUrl: './department-list.html',
   styleUrls: ['./department-list.component.css']
 })
