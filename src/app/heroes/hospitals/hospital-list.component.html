@@ -1,0 +1,40 @@
+<div class="container p-5">
+  <div class="row justify-content-center">
+    <div class="col-8 bg-light text-center p-2">
+    <h3>Hospital List</h3>
+    </div>
+    <div class="col-8 mt-3">
+    <button type="button" (click)="hospitalSort()" class="btn btn-success btn-sm">Sort By Hospital Name</button>
+    </div>
+    <div class="col-lg-8 col-md-8">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Hospital Name</th>
+        <th scope="col">Contact number</th>
+        <th scope="col">View Department</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hospital of hospitalList$">
+        <td>{{hospital.hospitalname}}</td>
+        <td>{{hospital.contactnumber}}</td>
+        <td><a [routerLink]="['/department', hospital.hospitalname]">View</a></td>
+        <td><span><a (click)="edit(hospital)">Edit</a></span>&nbsp; <span><a (click)="delete(hospital.hospitalname)">Delete</a></span></td>
+      </tr>
+      </tbody>
+    </table>
+    <form [formGroup]="formHospital" (ngSubmit)="onSubmit()">
+      <input type="text" id="hospitalname" name="hospitalname" formControlName="hospitalname" pattern="[a-zA-Z ]*">&nbsp;
+      <input type="number" id="contactnumber" name="contactnumber" formControlName="contactnumber">&nbsp;
+      <button *ngIf="!hospitalName" >Add</button><button *ngIf="hospitalName">Update</button>
+      <app-errors [input]="hospitalname" [name]="'Hospital name'"  [isSubmited]="submitted"></app-errors>
+      <app-errors [input]="contactnumber" [name]="'Contact number'"  [isSubmited]="submitted"></app-errors>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+

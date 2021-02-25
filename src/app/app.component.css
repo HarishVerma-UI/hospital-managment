@@ -1,0 +1,14 @@
+body{
+  margin:0px;
+  padding:0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

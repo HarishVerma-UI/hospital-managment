@@ -1,0 +1,40 @@
+ <div class="container p-5">
+    <div class="row justify-content-center">
+      <div class="col-8 bg-light text-center p-2">
+        <h3>Department List</h3>
+      </div>
+      <div class="col-8 mt-3">
+        <button type="button" (click)="departmentSort()" class="btn btn-success btn-sm">Sort By Department Name</button>&nbsp;&nbsp;
+        <button type="button" [routerLink]="['/hospitals']" class="btn btn-success btn-sm">Back</button>
+      </div>
+      <div class="col-8">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Department Name</th>
+            <th scope="col">Head of Department</th>
+            <th scope="col">Contact number</th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let department of $departments">
+            <td>{{department.departmentname}}</td>
+            <td>{{department.head}}</td>
+            <td>{{department.contactnumber}}</td>
+            <td><span><a (click)="edit(department)">Edit</a></span>&nbsp; <span><a (click)="delete(department.departmentname)">Delete</a></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <form [formGroup]="formDepratment" (ngSubmit)="onSubmit()">
+          <input type="text" id="departmentname" name="departmentname" formControlName="departmentname" pattern="[a-zA-Z ]*">&nbsp;
+          <input type="text" id="head" name="head" formControlName="head" required pattern="[a-zA-Z ]*">&nbsp;
+          <input type="number" id="contactnumber" name="contactnumber" formControlName="contactnumber" >&nbsp;
+          <button *ngIf="!departmentsName" >Add</button><button *ngIf="departmentsName">Update</button>
+          <app-errors [input]="departmentname" [name]="'Department name'"  [isSubmited]="submitted"></app-errors>
+          <app-errors [input]="head" [name]="'Head of Department'"  [isSubmited]="submitted"></app-errors>
+          <app-errors [input]="contactnumber" [name]="'Contact number'"  [isSubmited]="submitted"></app-errors>
+        </form>
+      </div>
+    </div>
+  </div>
