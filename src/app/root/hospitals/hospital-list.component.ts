@@ -1,6 +1,3 @@
-// TODO: Feature Componetized like CrisisCenter
-import { Observable } from 'rxjs';
-import {first, switchMap} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -68,7 +65,6 @@ export class HospitalListComponent implements OnInit {
 
   delete(hospitalName: string) {
     this.service.deleteHospital(hospitalName)
-      .pipe(first())
       .subscribe(
         data => {
           this.getHospitals()
