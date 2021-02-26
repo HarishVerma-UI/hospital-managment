@@ -37,7 +37,7 @@ export class HospitalsService {
   }
 
   deleteHospital(hospitalName: string) {
-    let index = hospitals.findIndex(item=>item.departmentname==hospitalName)
+    let index = hospitals.findIndex(item=>item.hospitalname==hospitalName)
     if (index > -1) {
       hospitals.splice(index, 1);
     }
