@@ -4,10 +4,10 @@
 
 #install 
 Download or clone the repo</br>
-#npm install //install all depandancy </br>
-#ng serve //load on browser </br>
+#npm install 
+#ng serve
 
-#Below link for live test 
+#Click hare for visit the app 
 https://hospital-01.herokuapp.com/
 
 #tech 
