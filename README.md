@@ -7,6 +7,9 @@ Download or clone the repo</br>
 #npm install //install all depandancy </br>
 #ng serve //load on browser </br>
 
+#Below link for live test 
+https://hospital-01.herokuapp.com/
+
 #tech 
 Node js </br>
 Angular 11 </br>
