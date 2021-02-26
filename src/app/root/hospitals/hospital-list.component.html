@@ -21,12 +21,15 @@
         <td>{{hospital.hospitalname}}</td>
         <td>{{hospital.contactnumber}}</td>
         <td><a [routerLink]="['/department', hospital.hospitalname]">View</a></td>
-        <td><span><a (click)="edit(hospital)">Edit</a></span>&nbsp; <span><a (click)="delete(hospital.hospitalname)">Delete</a></span></td>
+        <td><span>
+          <button type="button" class="btn btn-light btn-sm" (click)="edit(hospital)">Delete</button>&nbsp;
+          <button type="button" class="btn btn-light btn-sm" (click)="delete(hospital.hospitalname)">Delete</button>
+        </span></td>
       </tr>
       </tbody>
     </table>
     <form [formGroup]="formHospital" (ngSubmit)="onSubmit()">
-      <input type="text" id="hospitalname" name="hospitalname" formControlName="hospitalname" pattern="[a-zA-Z ]*">&nbsp;
+      <input type="text" id="hospitalname" name="hospitalname" formControlName="hospitalname" pattern="[a-zA-Z\.\-\/ ]*">&nbsp;
       <input type="number" id="contactnumber" name="contactnumber" formControlName="contactnumber">&nbsp;
       <button *ngIf="!hospitalName" >Add</button><button *ngIf="hospitalName">Update</button>
       <app-errors [input]="hospitalname" [name]="'Hospital name'"  [isSubmited]="submitted"></app-errors>
