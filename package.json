@@ -1,7 +1,7 @@
 {
-  "name": "hospital management by harish verma",
-  "version": "0.0.0",
-  "description": "hospital management",
+  "name": "hospital",
+  "version": "0.0.1",
+  "description": "hospital management by harish verma",
   "license": "MIT",
   "scripts": {
     "heroku-postbuild": "ng build --prod",
